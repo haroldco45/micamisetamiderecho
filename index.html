@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Camiseta, Mi Derecho 🇨🇴</title>
+<meta name="description" content="Conoce tus derechos como colombiano para usar la camiseta de la Selección Colombia. Informate legalmente antes del Mundial 2026.">
+<meta property="og:title" content="Mi Camiseta, Mi Derecho 🇨🇴">
+<meta property="og:description" content="Nadie te puede quitar los colores. Conoce la ley y defiende tu derecho a usarla.">
+<meta property="og:image" content="https://flagcdn.com/w640/co.png">
+<meta property="og:url" content="">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FCD116">
+<link rel="manifest" href="#" id="manifest-link">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --amarillo: #FCD116;
+    --azul: #003087;
+    --rojo: #CE1126;
+    --blanco: #FFFFFF;
+    --negro: #0a0a0a;
+    --gris: #1a1a2e;
+    --gris-claro: #f0f0f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0a0a1a 0%, #001a4d 50%, #0a0a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(252,209,22,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,48,135,0.3) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .bandera-strip {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--amarillo) 50%, var(--azul) 75%, var(--rojo) 100%);
+  }
+
+  .escudo {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: flotar 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(252,209,22,0.5));
+  }
+
+  @keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.2s forwards;
+  }
+
+  .hero-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 12vw, 7rem);
+    line-height: 0.9;
+    color: var(--blanco);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.4s forwards;
+  }
+
+  .hero-titulo span {
+    color: var(--amarillo);
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    max-width: 500px;
+    margin: 1rem auto 2rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.6s forwards;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    background: var(--amarillo);
+    color: var(--negro);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.8s forwards;
+  }
+
+  .hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(252,209,22,0.4);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1.5rem;
+    animation: bounce 1.5s infinite;
+    opacity: 0.5;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── VEREDICTO RÁPIDO ── */
+  .veredicto {
+    background: var(--amarillo);
+    color: var(--negro);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .veredicto-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .veredicto-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .veredicto-texto {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* ── SECCIONES ── */
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .seccion-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .seccion-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 7vw, 3rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── TARJETAS DE DERECHOS ── */
+  .derechos-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .derecho-card {
+    background: #111128;
+    border: 1px solid rgba(252,209,22,0.2);
+    border-left: 4px solid var(--amarillo);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .derecho-card:hover {
+    transform: translateX(6px);
+    border-left-color: var(--rojo);
+  }
+
+  .derecho-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .derecho-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .derecho-nombre {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .derecho-articulo {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+  }
+
+  .derecho-texto {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+  }
+
+  /* ── SEMÁFORO SÍ / NO ── */
+  .semaforo-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .semaforo-col {
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+  }
+
+  .semaforo-col.si { background: rgba(0,180,80,0.12); border: 1px solid rgba(0,180,80,0.3); }
+  .semaforo-col.no { background: rgba(206,17,38,0.12); border: 1px solid rgba(206,17,38,0.3); }
+
+  .semaforo-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .semaforo-col.si .semaforo-titulo { color: #00b450; }
+  .semaforo-col.no .semaforo-titulo { color: var(--rojo); }
+
+  .semaforo-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .semaforo-item span:first-child { flex-shrink: 0; }
+
+  /* ── FCF BOX ── */
+  .fcf-box {
+    background: linear-gradient(135deg, #001a4d, #002870);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fcf-box::before {
+    content: '⚽';
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 6rem;
+    opacity: 0.06;
+  }
+
+  .fcf-box p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .fcf-box strong { color: var(--amarillo); }
+
+  /* ── ACORDEÓN FAQ ── */
+  .faq-list { margin-top: 1.5rem; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+
+  .faq-pregunta {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--blanco);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 1.1rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.2s;
+  }
+
+  .faq-pregunta:hover { color: var(--amarillo); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+    color: var(--amarillo);
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+
+  .faq-item.open .faq-respuesta { max-height: 300px; }
+
+  .faq-respuesta-inner { padding-bottom: 1.2rem; }
+
+  /* ── COMPARTIR ── */
+  .compartir-section {
+    background: linear-gradient(135deg, #0a0a1a, #001030);
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .compartir-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 9vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .compartir-titulo span { color: var(--amarillo); }
+
+  .compartir-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+  }
+
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0.4rem;
+  }
+
+  .btn-wa:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+  }
+
+  .btn-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: var(--blanco);
+    border: 2px solid rgba(255,255,255,0.3);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    margin: 0.4rem;
+  }
+
+  .btn-copy:hover { border-color: var(--amarillo); color: var(--amarillo); }
+
+  /* ── DIVIDER BANDERA ── */
+  .bandera-divider {
+    height: 8px;
+    background: linear-gradient(90deg, var(--amarillo) 50%, var(--azul) 75%, var(--rojo) 100%);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #050510;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-dev {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .footer-dev a { color: var(--amarillo); text-decoration: none; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--amarillo);
+    color: var(--negro);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    transition: transform 0.3s;
+    z-index: 999;
+    white-space: nowrap;
+  }
+
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── MUNDIAL BADGE ── */
+  .mundial-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(252,209,22,0.1);
+    border: 1px solid rgba(252,209,22,0.3);
+    border-radius: 50px;
+    padding: 0.4rem 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--amarillo);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .semaforo-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="bandera-strip"></div>
+
+  <div class="mundial-badge">⚽ Mundial 2026 · Tema del momento</div>
+
+  <div class="escudo">🇨🇴</div>
+
+  <p class="hero-tag">Tus derechos como colombiano</p>
+
+  <h1 class="hero-titulo">
+    Mi Camiseta,
+    <span>Mi Derecho</span>
+  </h1>
+
+  <p class="hero-sub">
+    Nadie te puede quitar los colores de Colombia. Conoce la ley y defiende tu libertad.
+  </p>
+
+  <button class="hero-btn" onclick="document.getElementById('derechos').scrollIntoView({behavior:'smooth'})">
+    Conoce tus derechos ↓
+  </button>
+
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- VEREDICTO RÁPIDO -->
+<div class="veredicto">
+  <div class="veredicto-icon">✅</div>
+  <h2 class="veredicto-titulo">SÍ PUEDES USARLA</h2>
+  <p class="veredicto-texto">
+    Como ciudadano colombiano, tienes pleno derecho a usar la camiseta de la Selección Colombia donde quieras. La misma Federación Colombiana de Fútbol lo confirmó: no puede prohibirte usarla una vez la hayas comprado legalmente.
+  </p>
+</div>
+
+<!-- DERECHOS FUNDAMENTALES -->
+<section id="derechos">
+  <p class="seccion-tag">Constitución Política de Colombia</p>
+  <h2 class="seccion-titulo">LAS LEYES QUE TE PROTEGEN</h2>
+  <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.7;">
+    Usar la camiseta de la Selección es una expresión de identidad cultural y libertad personal, protegida por varios artículos de la Constitución del 91.
+  </p>
+
+  <div class="derechos-grid">
+
+    <div class="derecho-card">
+      <div class="derecho-card-head">
+        <div class="derecho-icon">🧍</div>
+        <div>
+          <div class="derecho-nombre">Libre Desarrollo de la Personalidad</div>
+          <div class="derecho-articulo">Artículo 16 — Constitución Política</div>
+        </div>
+      </div>
+      <p class="derecho-texto">
+        Toda persona tiene derecho al libre desarrollo de su personalidad sin más limitaciones que las que imponen los derechos de los demás y el orden jurídico. Elegir qué ropa usar es una expresión directa de este derecho.
+      </p>
+    </div>
+
+    <div class="derecho-card">
+      <div class="derecho-card-head">
+        <div class="derecho-icon">🗣️</div>
+        <div>
+          <div class="derecho-nombre">Libertad de Expresión</div>
+          <div class="derecho-articulo">Artículo 20 — Constitución Política</div>
+        </div>
+      </div>
+      <p class="derecho-texto">
+        Se garantiza a toda persona la libertad de expresar y difundir su pensamiento y opiniones. Usar la camiseta es una forma de expresión de identidad, orgullo y adhesión cultural.
+      </p>
+    </div>
+
+    <div class="derecho-card">
+      <div class="derecho-card-head">
+        <div class="derecho-icon">⚖️</div>
+        <div>
+          <div class="derecho-nombre">Derecho a la Igualdad</div>
+          <div class="derecho-articulo">Artículo 13 — Constitución Política</div>
+        </div>
+      </div>
+      <p class="derecho-texto">
+        Todas las personas nacen libres e iguales ante la ley. Nadie puede ser discriminado por portar colores o símbolos de identidad nacional que son de acceso libre y comercialización abierta.
+      </p>
+    </div>
+
+    <div class="derecho-card">
+      <div class="derecho-card-head">
+        <div class="derecho-icon">🎭</div>
+        <div>
+          <div class="derecho-nombre">Identidad Cultural</div>
+          <div class="derecho-articulo">Artículo 70 — Constitución Política</div>
+        </div>
+      </div>
+      <p class="derecho-texto">
+        El Estado tiene el deber de promover y fomentar el acceso a la cultura de todos los colombianos. El fútbol y la Selección son parte de la identidad y cultura nacional, y su expresión está protegida.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="bandera-divider"></div>
+
+<!-- SEMÁFORO SÍ / NO -->
+<section>
+  <p class="seccion-tag">Guía práctica</p>
+  <h2 class="seccion-titulo">¿CUÁNDO SÍ Y CUÁNDO HAY LÍMITES?</h2>
+  <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.7;">
+    La ley protege al ciudadano, pero hay contextos específicos donde el uso puede tener restricciones. Aquí la guía clara.
+  </p>
+
+  <div class="semaforo-wrap">
+    <div class="semaforo-col si">
+      <div class="semaforo-titulo">✅ SÍ PUEDES</div>
+      <div class="semaforo-item"><span>🟢</span><span>Usarla en la calle, el trabajo o la casa</span></div>
+      <div class="semaforo-item"><span>🟢</span><span>Llevarla a ver partidos del Mundial 2026</span></div>
+      <div class="semaforo-item"><span>🟢</span><span>Ponértela en eventos públicos o marchas ciudadanas</span></div>
+      <div class="semaforo-item"><span>🟢</span><span>Usarla como hincha en cualquier contexto personal</span></div>
+      <div class="semaforo-item"><span>🟢</span><span>Expresar con ella tu identidad colombiana</span></div>
+    </div>
+
+    <div class="semaforo-col no">
+      <div class="semaforo-titulo">⚠️ CON LÍMITES</div>
+      <div class="semaforo-item"><span>🔴</span><span>Publicidad comercial sin autorización de la FCF</span></div>
+      <div class="semaforo-item"><span>🔴</span><span>Propaganda política organizada y masiva (candidatos)</span></div>
+      <div class="semaforo-item"><span>🔴</span><span>Reproducir o vender el diseño sin licencia (falsificación)</span></div>
+      <div class="semaforo-item"><span>🔴</span><span>Usar logos y escudos oficiales en productos propios</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE DIJO LA FCF -->
+<section>
+  <p class="seccion-tag">Pronunciamiento oficial</p>
+  <h2 class="seccion-titulo">LO QUE DIJO LA FCF</h2>
+
+  <div class="fcf-box">
+    <p>
+      🏛️ La <strong>Federación Colombiana de Fútbol</strong> aclaró oficialmente en junio de 2026 que <strong>no tiene facultades legales para impedir que un ciudadano use la camiseta</strong> una vez la haya adquirido legalmente, incluso si decide usarla en escenarios distintos a los deportivos.
+    </p>
+    <br>
+    <p>
+      La FCF también recordó que <strong>la camiseta puede ser comprada libremente</strong> por cualquier ciudadano colombiano o extranjero en los puntos de venta autorizados.
+    </p>
+    <br>
+    <p>
+      Lo que sí protegen son sus <strong>derechos de propiedad industrial y marcaria</strong> frente a usos comerciales no autorizados, propaganda política masiva y mercancías falsificadas.
+    </p>
+  </div>
+</section>
+
+<div class="bandera-divider"></div>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section>
+  <p class="seccion-tag">Resuelve tus dudas</p>
+  <h2 class="seccion-titulo">PREGUNTAS FRECUENTES</h2>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-pregunta" onclick="toggleFaq(this)">
+        ¿Me pueden prohibir entrar a un lugar por llevar la camiseta de Colombia?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-respuesta">
+        <div class="faq-respuesta-inner">
+          En general, no. El derecho al libre desarrollo de la personalidad (Art. 16 C.P.) protege tu decisión de vestirte como quieras. Un establecimiento privado puede tener códigos de vestimenta, pero no puede discriminarte por usar símbolos de identidad nacional sin una justificación legal válida.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-pregunta" onclick="toggleFaq(this)">
+        ¿Puedo usar la camiseta cuando voy a votar?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-respuesta">
+        <div class="faq-respuesta-inner">
+          Sí. Como ciudadano y hincha, puedes ir a votar con la camiseta de la Selección. La controversia surgió por el uso organizado y sistemático en campañas políticas, no por el ciudadano de a pie que simplemente la usa en su día a día, incluso el día de elecciones.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-pregunta" onclick="toggleFaq(this)">
+        ¿Qué pasa si la camiseta es "chiviada" (falsa)?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-respuesta">
+        <div class="faq-respuesta-inner">
+          El problema no es usarla — el problema es fabricarla o venderla sin licencia. Quien la vende o produce sin autorización infringe las normas de propiedad industrial. El ciudadano que la compra y la usa no tiene responsabilidad legal por el simple acto de portarla.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-pregunta" onclick="toggleFaq(this)">
+        ¿La FCF puede demandarme a mí como particular?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-respuesta">
+        <div class="faq-respuesta-inner">
+          Es prácticamente inviable. Los expertos en propiedad intelectual señalan que existe una diferencia enorme entre proteger sus derechos ante grandes estrategias comerciales o políticas, y actuar contra expresiones personales de hinchas. La FCF misma reconoció que no puede impedir el uso personal una vez adquirida la prenda.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-pregunta" onclick="toggleFaq(this)">
+        ¿Qué recursos tengo si alguien me prohíbe usar la camiseta?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-respuesta">
+        <div class="faq-respuesta-inner">
+          Puedes interponer una tutela invocando los artículos 13 (igualdad), 16 (libre desarrollo) y 20 (libertad de expresión) de la Constitución. Es el mecanismo más rápido para proteger derechos fundamentales en Colombia y un juez debe resolverla en 10 días.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARTIR -->
+<div class="compartir-section">
+  <h2 class="compartir-titulo">
+    ¡COMPARTE TU<br><span>DERECHO!</span>
+  </h2>
+  <p class="compartir-sub">Que todos los colombianos lo sepan antes del Mundial 2026</p>
+
+  <a class="btn-wa" id="btn-whatsapp" href="#" onclick="compartirWA()">
+    <span>📲</span> Compartir por WhatsApp
+  </a>
+  <button class="btn-copy" onclick="copiarLink()">
+    🔗 Copiar enlace
+  </button>
+</div>
+
+<div class="bandera-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MI CAMISETA, MI DERECHO 🇨🇴</div>
+  <p class="footer-dev">
+    Desarrollada por <a href="https://vibraspositivashm.com" target="_blank">Vibras Positivas HM</a> — Derechos de Autor Reservados<br>
+    <span style="opacity:0.5; font-size:0.72rem;">Contenido informativo. No reemplaza asesoría jurídica profesional.</span>
+  </p>
+</footer>
+
+<div class="toast" id="toast">✅ ¡Enlace copiado!</div>
+
+<script>
+  // FAQ Toggle
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Compartir WhatsApp
+  function compartirWA() {
+    const url = window.location.href;
+    const texto = encodeURIComponent(
+      '🇨🇴 *MI CAMISETA, MI DERECHO* ⚽\n\n' +
+      '¿Sabías que nadie te puede prohibir usar la camiseta de la Selección Colombia? ' +
+      'La misma FCF lo confirmó. Conoce tus derechos antes del Mundial 2026:\n\n' + url
+    );
+    window.open('https://wa.me/?text=' + texto, '_blank');
+    return false;
+  }
+
+  // Copiar enlace
+  function copiarLink() {
+    const url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(mostrarToast);
+    } else {
+      const el = document.createElement('textarea');
+      el.value = url;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      mostrarToast();
+    }
+  }
+
+  function mostrarToast() {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  // Animación scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.derecho-card, .faq-item, .fcf-box').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Manifest dinámico PWA
+  const manifest = {
+    name: 'Mi Camiseta, Mi Derecho 🇨🇴',
+    short_name: 'MiCamiseta',
+    description: 'Conoce tus derechos para usar la camiseta de la Selección Colombia',
+    start_url: '.',
+    display: 'standalone',
+    theme_color: '#FCD116',
+    background_color: '#0a0a1a',
+    icons: [
+      { src: 'https://flagcdn.com/192x144/co.png', sizes: '192x192', type: 'image/png' },
+      { src: 'https://flagcdn.com/512x384/co.png', sizes: '512x512', type: 'image/png' }
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+  document.getElementById('manifest-link').href = URL.createObjectURL(blob);
+</script>
+
+</body>
+</html>
